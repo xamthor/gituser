@@ -16,7 +16,7 @@
 	import { getUserEvents, getUser } from "../api/github";
 	import Card from './Card.vue';
 	import User from './User.vue';
-
+	/* eslint-disable */
 	export default {
 		name: 'Feed',
 		components: {
