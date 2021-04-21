@@ -3,6 +3,8 @@
 	<div class="mx-2">
 		<Feed/>
 	</div>
+	<div class="fixed top-0 right-10 text-white bg-gray-600 p-4 text-center">
+		<a href="https://github.com/xamthor/gituser" target="_blank">GitHub Repo</a></div>
 </template>
 
 <script>
