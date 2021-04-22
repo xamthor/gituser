@@ -1,7 +1,7 @@
 <template>
 	<div class="flex space-x-3 text-white bg-gray-700 py-6 px-4 rounded-2xl bg-opacity-60 w-96 mx-auto mb-8">
 		<img class="h-6 w-6 rounded-full"  :src="item.actor.avatar_url" alt="">
-		<div class="flex-1 space-y-1">
+		<div class="w-auto overflow-hidden">
 			<div class="flex items-center justify-between">
 				<h3 class="text-sm font-medium">{{ item.actor.display_login }}</h3>
 				<p class="text-sm text-gray-400"> {{ formatDate(item.created_at) }}</p>
