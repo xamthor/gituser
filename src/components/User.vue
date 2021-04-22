@@ -11,7 +11,7 @@
 			</a>
 		</div>
 	</div>
-
+	<img :src="`https://ghchart.rshah.org/409ba5/${user.login}`" alt="" class="mx-auto bg-white rounded-md my-4 p-4" />
 </template>
 <script>
 	export default {
