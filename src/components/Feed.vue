@@ -9,7 +9,7 @@
 		<Card v-for="item in queries" :key="item.id" :item="item" />
     </div>
     <div v-else class="text-white text-center text-xs">
-		select or search
+		waiting
     </div>
 </template>
 <script>
