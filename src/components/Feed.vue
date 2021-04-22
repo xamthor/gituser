@@ -1,8 +1,8 @@
 <template>
     <div class="mx-auto container my-12 text-center">
 		<label for="email" class="block text-sm font-medium text-white my-4">Search</label>
-		<input class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full md:w-96 sm:text-sm border-gray-300 rounded-md mx-auto" type="text" v-model="query" v-on:keyup.enter.prevent="fetchUser">
-		<button  @click="fetchUser" class="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Search</button>
+		<input class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full md:w-96 sm:text-sm border-gray-300 rounded-md mx-auto" type="text" v-model="query" v-on:keyup.enter.prevent="search">
+		<button  @click="search" class="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Search</button>
 
 		<div v-if="!users.length">
 			<label for="email" class="block text-sm font-medium text-white my-4">or <br>Import multiple Users</label>
@@ -48,7 +48,12 @@
 			}
 		},
 		methods: {
-			async fetchUser (query) {
+			async search(){
+				this.users.push({ name: this.query, username: this.query })
+				localStorage.users = JSON.stringify(this.users);
+				this.fetchUser()
+			},
+			async fetchUser () {
 				try {
 					this.queries = await getUserEvents(this.query);
 					this.user = await getUser(this.query);
